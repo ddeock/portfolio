@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B&W Creative Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="top-nav container">
+        <div class="logo">Deoki</div>
+        <a href="#" class="contact-link">Contact us</a>
+    </nav>
+
+    <main class="error-page">
+        <section class="hero container">
+						<h1>어머나, 페이지를 찾을 수 없어요.</h1>
+						<p>색상과 어울리는 매력적이고 인기 있는 디자인들을 감상해 보세요. <span class="highlight" id="colorText">#9000ff</span></p>
+						
+						<!-- 404 그리드 -->
+						<div class="four-zero-four-wrapper">
+								<div class="digit" id="digit1"></div>
+								<div class="digit" id="digit2"></div>
+								<div class="digit" id="digit3"></div>
+						</div>
+
+						<!-- 컬러 스크롤 바 (검색창이 없으므로 마진 조정) -->
+						<div class="color-slider-container">
+								<input type="range" min="0" max="360" value="274" class="color-slider" id="colorRange">
+						</div>
+				</section>
+
+        <!-- 상세 프로젝트 섹션 (컬러 블록 적용) -->
+        <section id="project-detail" class="project-detail">
+            <div class="container">
+                <!-- 메인 컬러 블록 (dribbble.jpg의 Quill 영역) -->
+                <div class="main-project-color">
+                    <div class="inner-content">Quill</div>
+                </div>
+
+                <div class="project-info">
+                    <p class="description">
+                        고전적인 요소를 현대적인 컬러와 결합하여 재구성했습니다.
+                    </p>
+                    <p class="dots">...</p>
+                    <div class="links">
+                        <a href="#">Our website</a> / <a href="#">Instagram</a> / <a href="#">Twitter</a>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <div class="author-section">
+                    <div class="avatar-block"></div>
+                    <h2>Focus Lab</h2>
+                    <button class="btn-primary">Get in touch</button>
+                </div>
+
+                <div class="more-works">
+                    <div class="more-header">
+                        <span>More by Focus Lab</span>
+                        <a href="#" class="view-profile">View profile</a>
+                    </div>
+                    <!-- 이미지 대신 컬러 블록 그리드 -->
+                    <div class="works-grid">
+                        <div class="work-color-item" style="background: #e7e7e9;"></div>
+                        <div class="work-color-item" style="background: #ffecd2;"></div>
+                        <div class="work-color-item" style="background: #d4fc79;"></div>
+                        <div class="work-color-item" style="background: #a1c4fd;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

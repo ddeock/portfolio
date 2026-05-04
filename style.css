@@ -1,0 +1,298 @@
+/* ---------------------------------------
+   1. 기본 초기화 및 변수 설정
+--------------------------------------- */
+:root {
+    --primary-color: #9000ff; /* 기본 보라색 */
+    --text-dark: #0d0c22;
+    --text-gray: #6e6d7a;
+    --bg-light: #f3f3f4;
+    --thumb-size: 45px; /* 404 블록 크기 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ---------------------------------------
+   2. 네비게이션 (Top Nav)
+--------------------------------------- */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px; /* 여백을 줘서 시원하게 배치 */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    cursor: pointer;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: var(--text-gray);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.contact-link:hover {
+    color: var(--text-dark);
+}
+
+/* ---------------------------------------
+   3. 히어로 섹션 & 404 인터랙션
+--------------------------------------- */
+.hero {
+    text-align: center;
+    padding: 60px 0 20px;
+}
+
+.hero h1 {
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: var(--text-gray);
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* 404 그리드 레이아웃 */
+.four-zero-four-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0 50px;
+}
+
+.digit {
+    display: grid;
+    grid-template-columns: repeat(5, var(--thumb-size));
+    grid-template-rows: repeat(7, var(--thumb-size));
+    gap: 5px;
+}
+
+.thumb {
+    width: var(--thumb-size);
+    height: var(--thumb-size);
+    border-radius: 4px;
+    background: var(--primary-color);
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease;
+    position: relative;
+}
+
+.thumb:hover {
+    transform: scale(2.2);
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* ---------------------------------------
+   4. 컬러 슬라이더 (image_b837e3.png 스타일)
+--------------------------------------- */
+.color-slider-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.color-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #ff0000, #ffaa00, #aaff00, #00ffaa, #00aaff, #aa00ff, #ff00aa);
+    outline: none;
+    cursor: pointer;
+}
+
+/* 슬라이더 핸들(Thumb) 커스텀 */
+.color-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 28px;
+    height: 28px;
+    background: #fff;
+    border: 5px solid var(--primary-color); /* JS에서 실시간 변경됨 */
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    cursor: grab;
+    transition: border-color 0.2s;
+}
+
+/* ---------------------------------------
+   5. 상세 프로젝트 섹션 (dribbble.jpg 스타일)
+--------------------------------------- */
+.project-detail {
+    display: none; /* JS 클릭 전 숨김 */
+    padding: 100px 0;
+    border-top: 1px solid #f0f0f0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.project-detail.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 메인 컬러 블록 */
+.main-project-color {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #29e6b5;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(40px, 10vw, 80px);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 60px;
+    transition: background-color 0.5s ease;
+}
+
+.project-info {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.description {
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #3d3d4e;
+    margin-bottom: 25px;
+}
+
+.links {
+    font-size: 16px;
+    color: var(--text-gray);
+}
+
+.links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid;
+    padding-bottom: 2px;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 80px 0;
+}
+
+/* 프로필 섹션 */
+.author-section {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.avatar-block {
+    width: 64px;
+    height: 64px;
+    background: #ff5500;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.btn-primary {
+    background: var(--text-dark);
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+/* 하단 작품 그리드 */
+.more-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px; /* 요청하신 넓은 간격 */
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.view-profile {
+    color: var(--text-gray);
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.work-color-item {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    transition: filter 0.3s;
+}
+
+.work-color-item:hover {
+    filter: brightness(0.9);
+    cursor: pointer;
+}
+
+/* ---------------------------------------
+   6. 반응형 설정
+--------------------------------------- */
+@media (max-width: 900px) {
+    :root { --thumb-size: 35px; }
+    .four-zero-four-wrapper { gap: 15px; }
+    .works-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    :root { --thumb-size: 25px; }
+    .top-nav { height: 70px; }
+    .hero { padding-top: 40px; }
+    .hero h1 { font-size: 24px; }
+    .main-project-color { aspect-ratio: 1 / 1; }
+}
