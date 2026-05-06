@@ -15,12 +15,19 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     color: var(--text-dark);
     background: #fff;
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 .container {
@@ -284,26 +291,76 @@ body {
    6. 반응형 설정
 --------------------------------------- */
 @media (max-width: 900px) {
-    :root { --thumb-size: 35px; }
-    .four-zero-four-wrapper { gap: 15px; }
+    :root { --thumb-size: 30px; }
+    .four-zero-four-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 18px;
+        margin: 30px 0 40px;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .digit {
+        gap: 6px;
+        min-width: 0;
+        width: auto;
+    }
     .works-grid { grid-template-columns: repeat(2, 1fr); }
-   .container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-      width:100%;
-   }
+    .container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 12px;
+        width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+@media (max-width: 500px) {
+    :root { --thumb-size: 18px; }
+    .container { padding: 0 10px; width: 100%; overflow-x: hidden; }
+    .four-zero-four-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 12px;
+        margin: 25px 0 35px;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .digit {
+        gap: 5px;
+        min-width: 0;
+        width: auto;
+    }
+    .color-slider-container { margin: 0 auto 60px; padding: 0 10px; }
 }
 
 @media (max-width: 340px) {
-    :root { --thumb-size: 25px; }
-    .top-nav { height: 70px; }
-    .hero { padding-top: 40px; }
-    .hero h1 { font-size: 24px; }
-    .main-project-color { aspect-ratio: 1 / 1; }
-   max-width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-      width:100%;
-   }
+    :root { --thumb-size: 14px; }
+    .container { padding: 0 6px; width: 100%; overflow-x: hidden; }
+    .top-nav { height: 60px; overflow: hidden; }
+    .logo { font-size: 18px; }
+    .contact-link { font-size: 12px; }
+    .hero { padding: 30px 0 15px; overflow: hidden; }
+    .hero h1 { font-size: 20px; margin-bottom: 10px; }
+    .hero p { font-size: 14px; margin-bottom: 20px; }
+    .four-zero-four-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 12px;
+        margin: 20px 0 30px;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .digit { gap: 5px; min-width: 0; width: auto; }
+    .color-slider-container { margin: 0 auto 60px; padding: 0 6px; }
+    .main-project-color { aspect-ratio: 1 / 1; font-size: clamp(24px, 8vw, 40px); margin-bottom: 40px; }
+    .project-detail { padding: 50px 0; overflow: hidden; }
+    .description { font-size: 16px; margin-bottom: 15px; }
+    .divider { margin: 40px 0; }
+    .author-section { margin-bottom: 50px; }
+    .more-header { margin-bottom: 20px; font-size: 16px; }
+    .works-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; overflow: hidden; }
 }
