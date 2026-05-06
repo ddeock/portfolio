@@ -289,7 +289,7 @@ body {
     .works-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 340px) {
     :root { --thumb-size: 25px; }
     .top-nav { height: 70px; }
     .hero { padding-top: 40px; }
