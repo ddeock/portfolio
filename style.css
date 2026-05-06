@@ -287,6 +287,12 @@ body {
     :root { --thumb-size: 35px; }
     .four-zero-four-wrapper { gap: 15px; }
     .works-grid { grid-template-columns: repeat(2, 1fr); }
+   .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+      width:100%;
+   }
 }
 
 @media (max-width: 340px) {
